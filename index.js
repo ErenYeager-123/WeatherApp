@@ -5,7 +5,6 @@ const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 const input = document.querySelector('.search-box input');
 
-//Tách riêng phần xử lý ra 1 function để dễ gọi lại
 function fetchWeather() {
     const APIKey = 'a6952f825a1142be969162131252604';
     const city = input.value.trim();
@@ -60,10 +59,7 @@ function fetchWeather() {
         });
 }
 
-// Gán click cho nút search
 search.addEventListener('click', fetchWeather);
-
-// Gán keydown cho input
 input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         fetchWeather();
